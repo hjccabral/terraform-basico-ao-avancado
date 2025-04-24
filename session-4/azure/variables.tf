@@ -17,19 +17,19 @@ variable "account_replication_type" {
 }
 
 variable "hjcc_resource_group_name" {
-    description = "Name of resource group"
-    type = string
+  description = "Name of resource group"
+  type        = string
 }
 
 variable "hjcc_storage_account_name" {
-    description = "Name of storage account"
-    type = string
-    default = "hjccstorageaccount"
+  description = "Name of storage account"
+  type        = string
+  default     = "hjccstorageaccount"
 }
 
 variable "hjcc_storage_container" {
-    description = "Name of storage container"
-    type = string
-    default = "hjcc-storage-container"
-  
+  description = "Name of storage container"
+  type        = string
+  default     = "hjcc-storage-container"
+
 }
