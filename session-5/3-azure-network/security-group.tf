@@ -4,7 +4,7 @@ resource "azurerm_network_security_group" "security_group" {
   resource_group_name = azurerm_resource_group.az-resource-group.name
 
   security_rule {
-    name                       = "Rule01 - SSH"
+    name                       = "Rule01-SSH"
     priority                   = 100
     direction                  = "Inbound"
     access                     = "Allow"
