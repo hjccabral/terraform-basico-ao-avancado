@@ -3,8 +3,8 @@ resource "azurerm_storage_account" "az_stg_account" {
   resource_group_name      = azurerm_resource_group.az-resource-group.name
   location                 = azurerm_resource_group.az-resource-group.location
   account_tier             = var.account_tier_azure
-  account_replication_type = var.account_replication_type 
-  
+  account_replication_type = var.account_replication_type
+
   blob_properties {
     versioning_enabled = true
   }
