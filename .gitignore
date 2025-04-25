@@ -41,3 +41,6 @@ terraform.rc
 
 # Ignorar plan.out
 **/plan.out
+
+# Ignorar arquivos - Terraform Lock
+.terraform.lock.hcl
