@@ -12,7 +12,7 @@ terraform {
     container_name       = "hjcc-stg-cont"
     key                  = "terraform/8-state-lock/terraform.tfstate"
   }
-  
+
 }
 
 provider "aws" {
