@@ -23,4 +23,35 @@ resource "azurerm_linux_virtual_machine" "vm" {
     sku       = "22_04-lts"
     version   = "latest"
   }
+
+  provisioner "local-exec" {
+    command = "echo ${self.public_ip_address} >> /tmp/public_ips.txt"
+  }
+
+  provisioner "remote-exec" {
+    inline = [
+      "echo subnet_id ${data.terraform_remote_state.network.outputs.subnet_id} >> /tmp/network_ids.txt",
+      "echo network_security_group ${data.terraform_remote_state.network.outputs.network_security_group_id} >> /tmp/network_ids.txt"
+    ]
+  }
+
+  connection {
+    type        = "ssh"
+    user        = "admtf"
+    private_key = file("~/.ssh/id_rsa")
+    host        = self.public_ip_address
+  }
+
+  provisioner "file" {
+    source      = "./docs/"
+    destination = "/tmp/"
+  }
+
+  provisioner "file" {
+    content     = "VM Size: ${self.size}"
+    destination = "/tmp/"
+  }
+
+  tags = local.common_tags
+
 }

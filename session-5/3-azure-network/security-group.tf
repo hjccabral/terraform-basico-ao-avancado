@@ -15,10 +15,23 @@ resource "azurerm_network_security_group" "security_group" {
     destination_address_prefix = "*"
   }
 
+  # Regra de saída para internet
+  security_rule {
+    name                       = "Allow-Internet-Outbound"
+    priority                   = 200
+    direction                  = "Outbound"
+    access                     = "Allow"
+    protocol                   = "*"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "Internet"
+  }
+
   tags = local.common_tags
 }
 
 resource "azurerm_subnet_network_security_group_association" "snsga" {
   subnet_id                 = azurerm_subnet.subnet1.id
-  network_security_group_id = azurerm_network_security_group.network_security_group.id
+  network_security_group_id = azurerm_network_security_group.security_group.id
 }

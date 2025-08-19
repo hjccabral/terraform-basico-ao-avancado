@@ -10,7 +10,7 @@ terraform {
     resource_group_name  = "hjcc-rg-terraform-remote-state"
     storage_account_name = "hjccstgacctfstate"
     container_name       = "hjcc-stg-cont"
-    key                  = "terraform/4-azure-vm/terraform.tfstate"
+    key                  = "terraform/session-6/2-azure-provisioners/terraform.tfstate"
   }
 }
 
