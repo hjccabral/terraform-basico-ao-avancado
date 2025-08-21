@@ -7,18 +7,16 @@ terraform {
     }
   }
   backend "s3" {
-    bucket                  = "hilton-tf-state"
-    key                     = "terraform/session-6/1-aws-provisioners/terraform.tfstate"
-    region                  = "us-east-1"
-    profile                 = "curso-terraform"
-    shared_credentials_file = "./secrets/credentials"
+    bucket  = "hilton-tf-state"
+    key     = "terraform/session-6/1-aws-provisioners/terraform.tfstate"
+    region  = "us-east-1"
+    profile = "curso-terraform"
   }
 }
 
 provider "aws" {
-  region                   = var.region_aws
-  shared_credentials_files = ["${path.module}/secrets/credentials"]
-  profile                  = "curso-terraform"
+  region  = var.region_aws
+  profile = "curso-terraform"
   default_tags {
     tags = {
       curso      = "Terraform - Basico ao Avançado"
@@ -30,10 +28,9 @@ provider "aws" {
 data "terraform_remote_state" "vpc" {
   backend = "s3"
   config = {
-    bucket                  = "hilton-tf-state"
-    key                     = "terraform/2-aws-remote-state/terraform.tfstate"
-    region                  = "us-east-1"
-    shared_credentials_file = "./secrets/credentials"
-    profile                 = "curso-terraform"
+    bucket  = "hilton-tf-state"
+    key     = "terraform/2-aws-remote-state/terraform.tfstate"
+    region  = "us-east-1"
+    profile = "curso-terraform"
   }
 }

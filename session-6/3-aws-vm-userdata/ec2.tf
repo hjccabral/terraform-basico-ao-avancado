@@ -10,10 +10,10 @@ resource "aws_instance" "vpc" {
   subnet_id                   = data.terraform_remote_state.vpc.outputs.id_subnet_terraform
   vpc_security_group_ids      = [data.terraform_remote_state.vpc.outputs.id_security_group_terraform]
   associate_public_ip_address = true
-  user_data = file("${path.module}/files/docker.sh")
+  user_data                   = file("${path.module}/files/docker.sh")
 
   tags = {
     Name = "hjcc-ec2-instance"
-  } 
+  }
 
 }
