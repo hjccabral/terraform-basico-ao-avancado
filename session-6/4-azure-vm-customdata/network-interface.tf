@@ -9,6 +9,6 @@ resource "azurerm_network_interface" "network_interface" {
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = azurerm_public_ip.public_ip.id
   }
-
-  tags = local.common_tags
+  dns_servers = ["168.63.129.16"]
+  tags        = local.common_tags
 }
