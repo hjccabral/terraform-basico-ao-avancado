@@ -27,7 +27,6 @@ locals {
 }
 
 module "network" {
-  depends_on              = [azurerm_resource_group.az-resource-group]
   source                  = "Azure/network/azurerm"
   version                 = "5.3.0"
   resource_group_name     = var.resource_group_azure
