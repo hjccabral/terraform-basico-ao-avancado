@@ -27,12 +27,12 @@ locals {
 }
 
 module "network" {
-  depends_on              = [azurerm_resource_group.az-resource-group]
-  source                  = "Azure/network/azurerm"
-  version                 = "5.3.0"
-  resource_group_name     = var.resource_group_azure
-  use_for_each            = true
-  subnet_names            = var.subnet_names
-  tags                    = local.common_tags
-  vnet_name               = var.vnet_name
+  depends_on          = [azurerm_resource_group.az-resource-group]
+  source              = "Azure/network/azurerm"
+  version             = "5.3.0"
+  resource_group_name = var.resource_group_azure
+  use_for_each        = true
+  subnet_names        = var.subnet_names
+  tags                = local.common_tags
+  vnet_name           = var.vnet_name
 }
