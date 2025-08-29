@@ -1,8 +1,10 @@
-resource "aws_subnet" "subnet1" {
+resource "aws_subnet" "subnet" {
+  count = 3
+
   vpc_id     = aws_vpc.vpc.id
-  cidr_block = "10.0.1.0/24"
+  cidr_block = "10.0.${count.index}.0/24"
 
   tags = {
-    Name = "vpc-terraform-hjcc-subnet1"
+    Name = "vpc-terraform-hjcc-subnet-${count.index}"
   }
 }

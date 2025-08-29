@@ -7,9 +7,6 @@ Arquivos ``terraform`` para infraestrutura na AWS contendo toda a parte de Netwo
 * main.tf
 * vpc.tf
 * subnet.tf
-* internet-gateway.tf
-* security-group.tf
-* route-table.tf
 * variables.tf
 * output.tf
 
