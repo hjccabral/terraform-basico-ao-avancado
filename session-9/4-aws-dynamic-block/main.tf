@@ -8,7 +8,7 @@ terraform {
   }
   backend "s3" {
     bucket  = "hilton-tf-state"
-    key     = "terraform/2-aws-remote-state/terraform.tfstate"
+    key     = "terraform/session-9/4-aws-dynamic-block/terraform.tfstate"
     region  = "us-east-1"
     profile = "curso-terraform"
   }
