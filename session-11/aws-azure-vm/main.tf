@@ -1,5 +1,5 @@
 terraform {
-  required_version = ">= 1.13.0"
+  required_version = ">= 1.12.0"
 
   required_providers {
     aws = {
@@ -15,7 +15,7 @@ terraform {
 
   backend "s3" {
     bucket  = "hilton-tf-state"
-    key     = "terraform/session-11//aws-azure-vm/terraform.tfstate"
+    key     = "terraform/session-11/aws-azure-vm/terraform.tfstate"
     region  = "us-east-1"
     profile = "curso-terraform"
   }
