@@ -5,5 +5,5 @@ output "subnet_id" {
 
 output "network_security_group_id" {
   description = "value of network security group id"
-  value       = azurerm_network_security_group.network_security_group.id
+  value       = azurerm_network_security_group.security_group.id
 }
